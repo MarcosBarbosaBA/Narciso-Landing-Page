@@ -1,0 +1,352 @@
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --cor1: #110890;
+    --cor2: #171322f7;
+    --cor3: rgb(249, 246, 250);
+    --cor4: #f1f4ed;
+    --cor5: #2a2544;
+    --cor6: #000000;
+}
+body{
+    background-color: var(--cor2);
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: .8rem;
+    background-color: var(--cor2);
+    min-height: 50px;
+}
+
+nav{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.links_menu{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.links_menu:hover{
+        color: var(--cor3);
+        text-decoration: underline;
+        text-decoration-color: var(--cor3);
+        
+}
+
+@media (max-width: 768px){
+
+    nav{
+        gap: 1rem;
+    }
+
+    .links_menu{
+        font-size: 0.9rem;
+    }
+
+}
+
+.imagem_logo{
+        max-width: 250px;
+}
+.img_logo{
+    display: flex;
+    width: 45%;
+    
+
+}
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+section{
+    padding: 4rem;
+}
+
+@media (max-width: 768px){
+
+    section{
+        padding: 2rem 1rem;
+    }
+
+}
+
+.seçao1{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+    align-items: center;
+    min-height: 600px;
+    flex-wrap: wrap;
+}
+
+.seçao1 > div{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 300px;
+    flex-wrap: wrap;
+}
+
+.seçao1 p{
+    color: white;
+}
+
+h1{
+    font-size: 4rem;
+    color: white;
+    letter-spacing: 5px;
+}
+
+@media (max-width: 768px){
+
+    h1{
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .seçao1 p{
+        text-align: center;
+    }
+
+}
+
+span{
+    color: var(--cor4);
+}
+
+.imagem_perfil{
+    max-width: 450px;
+    padding: 1rem;
+}
+
+.img_perfil{
+    border-radius: 15%;
+    background-color: var(--cor4);
+    width: 90%;
+}
+.Titulo{
+    color: white;
+    margin-left: 2%;
+}
+.sobre_mim{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sobre_mim > div{
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.sobre_mim > div img{
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.sobre_mim > div p{
+    max-width: 600px;
+    color: white;
+    text-align: justify;
+}
+
+.local_video{
+    background-color: var(--cor2);
+    display: flex;
+    flex-direction: column;
+}
+
+._video{
+    background-color: var(--cor2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+._video video{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.25);
+}
+
+footer{
+    background-color: var(--cor2);
+    color: white;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+footer >div{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.zap{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: flex;
+}
+
+.zap:hover{
+    text-decoration: underline
+}
+
+.instagram{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: flex;
+}
+
+.instagram:hover{
+    text-decoration: underline
+}
+
+.behance{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: flex;
+}
+
+.behance:hover{
+    text-decoration: underline
+}
+
+.container_imagens{
+    display: flex;
+    flex-direction: column;
+}
+.projetos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    overflow: hidden;
+
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    aspect-ratio: 7 / 8.5;
+
+    margin: 0 auto;
+}
+
+.botao{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    z-index: 10;
+
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+}
+
+.botao:hover{
+    background-color: rgba(255,255,255,0.2);
+}
+
+.prev{
+    left: 15px;
+}
+
+.next{
+    right: 15px;
+}
+
+.indicadores{
+    position: absolute;
+
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 10px;
+
+    padding: 8px 14px;
+    border-radius: 20px;
+
+    background-color: rgba(0,0,0,0.3);
+
+    z-index: 10;
+}
+
+.ponto{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+
+    background-color: rgba(255,255,255,0.5);
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.ponto.ativo{
+    background-color: white;
+    transform: scale(1.2);
+}
+
+.container{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0);
+    width: 100%;
+}
+
+#imagens img{
+    width: 100%;
+    flex-shrink: 0;
+    object-fit: cover;
+}
