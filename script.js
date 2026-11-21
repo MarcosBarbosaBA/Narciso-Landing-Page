@@ -18,49 +18,29 @@ function atualizarIndicadores(){
 }
 
 function atualizarCarrossel(){
-    const largura = document.querySelector(".projetos").clientWidth;
-
-    imgs.style.transform = `translateX(${-idx * largura}px)`;
+    imgs.style.transform = `translateX(${-idx * 100}%)`;
     atualizarIndicadores();
 }
 
-next.addEventListener("click", () => {
-    idx++;
-
-    if(idx >= img.length){
-        idx = 0;
-    }
-
+function irPara(i){
+    idx = (i + img.length) % img.length;
     atualizarCarrossel();
-});
+}
 
-prev.addEventListener("click", () => {
-    idx--;
-
-    if(idx < 0){
-        idx = img.length - 1;
-    }
-
-    atualizarCarrossel();
-});
+next.addEventListener("click", () => irPara(idx + 1));
+prev.addEventListener("click", () => irPara(idx - 1));
 
 pontos.forEach((ponto, index) => {
-    ponto.addEventListener("click", () => {
-        idx = index;
-        atualizarCarrossel();
-    });
+    ponto.addEventListener("click", () => irPara(index));
 });
 
+let inicioX = 0;
 
+imgs.addEventListener("touchstart", (e) => {
+    inicioX = e.touches[0].clientX;
+}, { passive: true });
 
-//function carrossel(){
-  //  idx++;
-
-    //if(idx > img.length - 1){
-     //   idx = 0;
-    //}
-
-    //  imgs.style.transform = `translateX(${-idx * 700}px)`;
-//}
-
-//setInterval(carrossel, 4000);
+imgs.addEventListener("touchend", (e) => {
+    const diferenca = e.changedTouches[0].clientX - inicioX;
+    if (Math.abs(diferenca) > 50) irPara(diferenca < 0 ? idx + 1 : idx - 1);
+});

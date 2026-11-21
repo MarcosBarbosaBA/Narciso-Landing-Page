@@ -5,6 +5,7 @@ h1{
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 :root{
@@ -17,7 +18,7 @@ h1{
 }
 body{
     background-color: var(--cor2);
-    height: 100vh;
+    min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -69,7 +70,7 @@ nav{
         max-width: 250px;
 }
 .img_logo{
-    display: flex;
+    display: block;
     width: 45%;
     
 
@@ -92,7 +93,7 @@ section{
 
 }
 
-.seçao1{
+.secao1{
     display: flex;
     justify-content: space-evenly;
     gap: 2rem;
@@ -101,7 +102,7 @@ section{
     flex-wrap: wrap;
 }
 
-.seçao1 > div{
+.secao1 > div{
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -109,7 +110,7 @@ section{
     flex-wrap: wrap;
 }
 
-.seçao1 p{
+.secao1 p{
     color: white;
 }
 
@@ -126,13 +127,13 @@ h1{
         text-align: center;
     }
 
-    .seçao1 p{
+    .secao1 p{
         text-align: center;
     }
 
 }
 
-span{
+.destaque{
     color: var(--cor4);
 }
 
@@ -174,7 +175,7 @@ span{
 .sobre_mim > div p{
     max-width: 600px;
     color: white;
-    text-align: justify;
+    text-align: left;
 }
 
 .local_video{
@@ -216,37 +217,17 @@ footer >div{
     flex-wrap: wrap;
 }
 
-.zap{
+footer a{
     text-decoration: none;
     color: white;
     font-weight: bold;
     display: flex;
+    align-items: center;
+    gap: .4rem;
 }
 
-.zap:hover{
-    text-decoration: underline
-}
-
-.instagram{
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    display: flex;
-}
-
-.instagram:hover{
-    text-decoration: underline
-}
-
-.behance{
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    display: flex;
-}
-
-.behance:hover{
-    text-decoration: underline
+footer a:hover{
+    text-decoration: underline;
 }
 
 .container_imagens{
@@ -349,4 +330,10 @@ footer >div{
     width: 100%;
     flex-shrink: 0;
     object-fit: cover;
+}
+
+a:focus-visible,
+button:focus-visible{
+    outline: 2px solid white;
+    outline-offset: 3px;
 }
