@@ -403,7 +403,12 @@ button:focus-visible{
     html{
             scroll-padding-top: 130px;
         }
-
+    
+    header{
+    padding: .4rem;
+    gap: .4rem;
+    }
+    
     .texto_zap{
         display: none;
     }
