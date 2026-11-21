@@ -34,13 +34,20 @@ pontos.forEach((ponto, index) => {
     ponto.addEventListener("click", () => irPara(index));
 });
 
+const area = document.querySelector(".projetos");
 let inicioX = 0;
+let inicioY = 0;
 
-imgs.addEventListener("touchstart", (e) => {
+area.addEventListener("touchstart", (e) => {
     inicioX = e.touches[0].clientX;
+    inicioY = e.touches[0].clientY;
 }, { passive: true });
 
-imgs.addEventListener("touchend", (e) => {
-    const diferenca = e.changedTouches[0].clientX - inicioX;
-    if (Math.abs(diferenca) > 50) irPara(diferenca < 0 ? idx + 1 : idx - 1);
+area.addEventListener("touchend", (e) => {
+    const dx = e.changedTouches[0].clientX - inicioX;
+    const dy = e.changedTouches[0].clientY - inicioY;
+
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+        irPara(dx < 0 ? idx + 1 : idx - 1);
+    }
 });
