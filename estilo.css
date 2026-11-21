@@ -399,9 +399,6 @@ button:focus-visible{
 }
 
 @media (max-width: 768px){
-    header{
-    position: static;
-    }
     
     html{
             scroll-padding-top: 130px;
