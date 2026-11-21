@@ -51,3 +51,17 @@ area.addEventListener("touchend", (e) => {
         irPara(dx < 0 ? idx + 1 : idx - 1);
     }
 });
+
+const mensagem = `Olá, Narciso! Vi o seu site e quero criar a identidade visual da minha marca.
+
+Nome do negócio:
+Área de atuação:
+O que preciso:
+
+Podemos conversar?`;
+
+const linkWhatsapp = `https://wa.me/5593991445892?text=${encodeURIComponent(mensagem)}`;
+
+document.querySelectorAll("a[href^='https://wa.me/']").forEach((link) => {
+    link.href = linkWhatsapp;
+});

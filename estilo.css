@@ -1,3 +1,8 @@
+html{
+    scroll-padding-top: 90px;
+    scroll-behavior: smooth;
+}
+
 h1{
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -16,6 +21,7 @@ h1{
     --texto: #F4F5F2;
     --texto-suave: #B4BDCE;
     --claro: #E0E1DD;
+    --verde-zap: #25d366;
 }
 body{
     background-color: var(--fundo);
@@ -31,8 +37,11 @@ header{
     flex-wrap: wrap;
     padding: .8rem;
     background-color: var(--fundo);
-    border-bottom: px solid var(--borda);
+    border-bottom: 1px var(--borda);
     min-height: 50px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
 }
 
 nav{
@@ -343,4 +352,79 @@ a:focus-visible,
 button:focus-visible{
     outline: 2px solid white;
     outline-offset: 3px;
+}
+
+.whatsapp_flutuante{
+    position: fixed;
+    right: 20px;
+    bottom: calc(50px + env(safe-area-inset-bottom, 0px));
+
+    height: 76px;
+    padding: 0 30px 0 24px;
+    gap: 0.8rem;
+    border-radius: 999px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--verde-zap);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,.35);
+
+    z-index: 100;
+    transition: transform 0.2s ease;
+    animation: pulso 2.5s infinite;
+}
+
+.whatsapp_flutuante:hover{
+    transform: scale(1.05);
+}
+
+.texto_zap{
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+@keyframes pulso{
+    0%{
+        box-shadow: 0 4px 12px rgba(0,0,0,.35), 0 0 0 0 rgba(37, 211, 102, 0.5);
+    }
+    70%{
+        box-shadow: 0 4px 12px rgba(0,0,0,.35), 0 0 0 22px rgba(37, 211, 102, 0);
+    }
+    100%{
+        box-shadow: 0 4px 12px rgba(0,0,0,.35), 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+@media (max-width: 768px){
+    header{
+    position: static;
+    }
+    
+    html{
+            scroll-padding-top: 130px;
+        }
+
+    .texto_zap{
+        display: none;
+    }
+
+    .whatsapp_flutuante{
+        width: 64px;
+        height: 64px;
+        padding: 0;
+    }
+
+    .whatsapp_flutuante svg{
+    width: 40px;
+    height: 40px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .whatsapp_flutuante{
+        animation: none;
+    }
 }
