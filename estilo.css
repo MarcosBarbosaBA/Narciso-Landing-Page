@@ -9,15 +9,16 @@ h1{
 }
 
 :root{
-    --cor1: #110890;
-    --cor2: #171322f7;
-    --cor3: rgb(249, 246, 250);
-    --cor4: #f1f4ed;
-    --cor5: #2a2544;
-    --cor6: #000000;
+    --fundo: #1F2639;
+    --superficie: #2B3550;
+    --borda: rgba(255, 255, 255, 0.10);
+    --destaque: #EDB943;
+    --texto: #F4F5F2;
+    --texto-suave: #B4BDCE;
+    --claro: #E0E1DD;
 }
 body{
-    background-color: var(--cor2);
+    background-color: var(--fundo);
     min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -29,7 +30,8 @@ header{
     gap: 1rem;
     flex-wrap: wrap;
     padding: .8rem;
-    background-color: var(--cor2);
+    background-color: var(--fundo);
+    border-bottom: px solid var(--borda);
     min-height: 50px;
 }
 
@@ -43,14 +45,14 @@ nav{
 
 .links_menu{
     text-decoration: none;
-    color: white;
+    color: var(--texto);
     font-weight: bold;
 }
 
 .links_menu:hover{
-        color: var(--cor3);
+        color: var(--destaque);
         text-decoration: underline;
-        text-decoration-color: var(--cor3);
+        text-decoration-color: var(--destaque);
         
 }
 
@@ -78,7 +80,7 @@ nav{
 main{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 0;
 }
 
 section{
@@ -111,12 +113,12 @@ section{
 }
 
 .secao1 p{
-    color: white;
+    color: var(--texto-suave);
 }
 
 h1{
     font-size: 4rem;
-    color: white;
+    color: var(--texto);
     letter-spacing: 5px;
 }
 
@@ -134,7 +136,7 @@ h1{
 }
 
 .destaque{
-    color: var(--cor4);
+    color: var(--destaque);
 }
 
 .imagem_perfil{
@@ -144,11 +146,11 @@ h1{
 
 .img_perfil{
     border-radius: 15%;
-    background-color: var(--cor4);
+    background-color: var(--superficie);
     width: 90%;
 }
 .Titulo{
-    color: white;
+    color: var(--texto);
     margin-left: 2%;
 }
 .sobre_mim{
@@ -168,24 +170,24 @@ h1{
 .sobre_mim > div img{
     width: 100%;
     max-width: 600px;
-    background-color: white;
+    background-color: var(--superficie);
     border-radius: 10px;
 }
 
 .sobre_mim > div p{
     max-width: 600px;
-    color: white;
+    color: var(--texto-suave);
     text-align: left;
 }
 
 .local_video{
-    background-color: var(--cor2);
+    background-color: var(--superficie);
     display: flex;
     flex-direction: column;
 }
 
 ._video{
-    background-color: var(--cor2);
+    background-color: var(--superficie);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -202,12 +204,13 @@ h1{
 }
 
 footer{
-    background-color: var(--cor2);
-    color: white;
+    background-color: var(--fundo);
+    color: var(--texto);
     padding: 4rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    border-top: 1px solid var(--borda)
 }
 
 footer >div{
@@ -219,7 +222,7 @@ footer >div{
 
 footer a{
     text-decoration: none;
-    color: white;
+    color: var(--texto);
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -227,12 +230,14 @@ footer a{
 }
 
 footer a:hover{
+    color: var(--destaque);
     text-decoration: underline;
 }
 
 .container_imagens{
     display: flex;
     flex-direction: column;
+    background-color: var(--superficie);
 }
 .projetos{
     display: flex;
@@ -243,8 +248,7 @@ footer a:hover{
 
     overflow: hidden;
 
-    width: 100%;
-    max-width: 700px;
+    width: min(100%, 700px, calc(90vh * 7 / 8.5));
     height: auto;
     aspect-ratio: 7 / 8.5;
 
@@ -275,7 +279,7 @@ footer a:hover{
 }
 
 .botao:hover{
-    background-color: rgba(255,255,255,0.2);
+    background-color: var(--destaque);
 }
 
 .prev{
@@ -316,7 +320,7 @@ footer a:hover{
 }
 
 .ponto.ativo{
-    background-color: white;
+    background-color: var(--destaque);
     transform: scale(1.2);
 }
 
