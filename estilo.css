@@ -37,7 +37,7 @@ header{
     flex-wrap: wrap;
     padding: .8rem;
     background-color: var(--fundo);
-    border-bottom: 1px var(--borda);
+    box-shadow: 0 2px 12px rgba(0,0,0,.35);
     min-height: 50px;
     position: sticky;
     top: 0;
@@ -408,7 +408,7 @@ button:focus-visible{
     padding: .4rem;
     gap: .4rem;
     }
-    
+
     .texto_zap{
         display: none;
     }
