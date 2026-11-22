@@ -401,10 +401,11 @@ button:focus-visible{
 @media (max-width: 768px){
     
     html{
-            scroll-padding-top: 130px;
+            scroll-padding-top: 0;
         }
     
     header{
+    position: static;
     padding: .4rem;
     gap: .4rem;
     }
