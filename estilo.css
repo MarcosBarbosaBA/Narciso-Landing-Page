@@ -37,7 +37,6 @@ header{
     flex-wrap: wrap;
     padding: .8rem;
     background-color: var(--fundo);
-    box-shadow: 0 2px 12px rgba(0,0,0,.35);
     min-height: 50px;
     position: sticky;
     top: 0;
